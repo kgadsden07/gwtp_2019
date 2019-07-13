@@ -2,4 +2,6 @@
 
 Project for kids to create their own, individualized Patatap. 
 
+## Dependencies
 
+Paper.js, Howler.js, Bootstrap 3, JQuery
