@@ -1,0 +1,68 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 09/07/2019 00:09
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-aquarium:before { content: "\f100"; }
+.flaticon-cat:before { content: "\f101"; }
+.flaticon-dog:before { content: "\f102"; }
+.flaticon-animal:before { content: "\f103"; }
+.flaticon-snake:before { content: "\f104"; }
+.flaticon-squirrel:before { content: "\f105"; }
+.flaticon-squid:before { content: "\f106"; }
+.flaticon-crab:before { content: "\f107"; }
+.flaticon-polar-bear:before { content: "\f108"; }
+.flaticon-penguin:before { content: "\f109"; }
+.flaticon-tattoo:before { content: "\f10a"; }
+.flaticon-cow:before { content: "\f10b"; }
+.flaticon-horse:before { content: "\f10c"; }
+.flaticon-pig:before { content: "\f10d"; }
+    
+    $font-Flaticon-aquarium: "\f100";
+    $font-Flaticon-cat: "\f101";
+    $font-Flaticon-dog: "\f102";
+    $font-Flaticon-animal: "\f103";
+    $font-Flaticon-snake: "\f104";
+    $font-Flaticon-squirrel: "\f105";
+    $font-Flaticon-squid: "\f106";
+    $font-Flaticon-crab: "\f107";
+    $font-Flaticon-polar-bear: "\f108";
+    $font-Flaticon-penguin: "\f109";
+    $font-Flaticon-tattoo: "\f10a";
+    $font-Flaticon-cow: "\f10b";
+    $font-Flaticon-horse: "\f10c";
+    $font-Flaticon-pig: "\f10d";

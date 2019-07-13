@@ -3,11 +3,18 @@ var choice = 'pata';
 
 document.getElementById("pata").style.color = '#d3d3d3'
 
+
+// Add the art button click listener here!
+
 document.getElementById("artMaker").addEventListener("click", function(){
   document.getElementById("artMaker").style.color = '#d3d3d3'
   document.getElementById("pata").style.color = 'white'
   choice = 'art';
 });
+
+
+// All Set!
+
 
 document.getElementById("pata").addEventListener("click", function(){
   document.getElementById("pata").style.color = '#d3d3d3'
@@ -18,6 +25,9 @@ document.getElementById("pata").addEventListener("click", function(){
 
 
 
+// Add secret code logic here!
+
+
 parsedCode = secretCode.split('');
 codeMap = {};
 var shapes = [];
@@ -26,6 +36,8 @@ for (var i = 0; i < parsedCode.length; ++i){
   codeMap[parsedCode[i]] = false;
 }
 
+
+// All set! 
 function onKeyDown(event){
   var notCode = false;
   if (parsedCode.indexOf(event.key) >= 0 && choice == 'pata'){
@@ -98,6 +110,11 @@ function onKeyDown(event){
       else if (keyData[event.key].shape == "star"){
         generateStar(keyData[event.key].color, keyData[event.key].size, keyData[event.key].points, maxPoint, keyData[event.key].animation);
       }}}}
+
+
+
+
+//functions
 
 function onKeyUp(event){
   if (parsedCode.indexOf(event.key) >= 0){
@@ -184,30 +201,41 @@ function generateSquare(color, size, maxPoint, animation){
 }
 }
 
+
+//animations
+
 function assignAnimation(object, animation){
-  if (animation == "hueChange"){
+  //add rotate animation here!
+  
+  if (animation == "rotate"){
     object.onFrame = function(event){
-    object.fillColor.hue += 1;
-    //all shapes shrink and are removed eventually
+    object.rotate(3);
+    //all shapes shrink are removed eventually
     object.scale(.95); 
     if (object.area < 1){
       object.remove(); // remove the circle from the canvas
       // shapes.splice(i, 1); // remove the circle from the array
+      }
     }
   }
-}
 
-else if (animation == "rotate"){
+
+
+//all set!
+
+else if (animation == "hueChange"){
   object.onFrame = function(event){
-  object.rotate(3);
-  //all shapes shrink are removed eventually
+  object.fillColor.hue += 1;
+  //all shapes shrink and are removed eventually
   object.scale(.95); 
   if (object.area < 1){
     object.remove(); // remove the circle from the canvas
     // shapes.splice(i, 1); // remove the circle from the array
-    }
   }
 }
+}
+
+
 
 else if (animation == "scramble"){
   object.onFrame = function(event){
