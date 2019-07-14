@@ -1,5 +1,7 @@
 var artArray = [];
 var choice = 'pata';
+var codeOn = false;
+var shapes = [];
 document.getElementById("pata").style.color = '#d3d3d3'
 
 
@@ -24,7 +26,7 @@ document.getElementById("pata").style.color = '#d3d3d3'
 
 document.getElementById("pata").addEventListener("click", function(){
   document.getElementById("pata").style.color = '#d3d3d3'
-  document.getElementById("artMaker").style.color = 'white'
+  document.getElementById("art").style.color = 'white'
   choice = 'pata';
   resetArtArray();
 });
@@ -48,6 +50,11 @@ document.getElementById("pata").addEventListener("click", function(){
 
 function onKeyDown(event){
   var notCode = false;
+
+
+
+
+  if (codeOn){  
   if (parsedCode.indexOf(event.key) >= 0 && choice == 'pata'){
     codeMap[event.key] = true
     var proceed = true;
@@ -94,6 +101,11 @@ function onKeyDown(event){
           }
     }
 
+    else{
+      notCode = true;
+    }
+
+  }
 
   else{
       notCode = true;
@@ -125,9 +137,11 @@ function onKeyDown(event){
 //functions
 
 function onKeyUp(event){
+  if (codeOn){
   if (parsedCode.indexOf(event.key) >= 0){
     codeMap[event.key] = false;
   }
+}
 }
 
 function generateStar(color, size, points, maxPoint, animation)
