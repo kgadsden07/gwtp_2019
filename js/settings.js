@@ -1,19 +1,25 @@
 var artArray = [];
 var choice = 'pata';
-
 document.getElementById("pata").style.color = '#d3d3d3'
+
+
+
 
 
 // Add the art button click listener here!
 
-document.getElementById("artMaker").addEventListener("click", function(){
-  document.getElementById("artMaker").style.color = '#d3d3d3'
-  document.getElementById("pata").style.color = 'white'
-  choice = 'art';
-});
+
+
+
+
+
+
+
+
 
 
 // All Set!
+
 
 
 document.getElementById("pata").addEventListener("click", function(){
@@ -28,16 +34,18 @@ document.getElementById("pata").addEventListener("click", function(){
 // Add secret code logic here!
 
 
-parsedCode = secretCode.split('');
-codeMap = {};
-var shapes = [];
 
-for (var i = 0; i < parsedCode.length; ++i){
-  codeMap[parsedCode[i]] = false;
-}
+
+
+
+
 
 
 // All set! 
+
+
+
+
 function onKeyDown(event){
   var notCode = false;
   if (parsedCode.indexOf(event.key) >= 0 && choice == 'pata'){
@@ -130,7 +138,6 @@ function generateStar(color, size, points, maxPoint, animation)
   var randomPoint = Point.random();
   var point = maxPoint * randomPoint;
   var starSize = 75 * size;
-  // var newStar = new Path.Star(point, points, starSize, Math.round(starSize/2));
   var newStar = new Path.Star(point, points, starSize, Math.round(starSize/2));
   newStar.fillColor = color;
   if (choice != 'art'){
@@ -140,6 +147,9 @@ function generateStar(color, size, points, maxPoint, animation)
   }
 
   else{
+    newStar.onClick = function(event){
+      this.remove();
+    }
     artArray.push(newStar);
   }
 }
@@ -160,6 +170,9 @@ function generateCircle(color, size, maxPoint, animation)
   }
 
   else{
+    newCircle.onClick = function(event){
+      this.remove();
+    }
     artArray.push(newCircle);
   }
 }
@@ -179,6 +192,9 @@ function generateTriangle(color, size, maxPoint, animation)
   }
 
   else{
+    newTriangle.onClick = function(event){
+      this.remove();
+    }
     artArray.push(newTriangle);
   }
 }
@@ -196,6 +212,9 @@ function generateSquare(color, size, maxPoint, animation){
   return newSquare;
   }
   else{
+    newSquare.onClick = function(event){
+      this.remove();
+    }
     artArray.push(newSquare);
 
 }
@@ -208,15 +227,7 @@ function assignAnimation(object, animation){
   //add rotate animation here!
   
   if (animation == "rotate"){
-    object.onFrame = function(event){
-    object.rotate(3);
-    //all shapes shrink are removed eventually
-    object.scale(.95); 
-    if (object.area < 1){
-      object.remove(); // remove the circle from the canvas
-      // shapes.splice(i, 1); // remove the circle from the array
-      }
-    }
+  
   }
 
 
@@ -226,11 +237,9 @@ function assignAnimation(object, animation){
 else if (animation == "hueChange"){
   object.onFrame = function(event){
   object.fillColor.hue += 1;
-  //all shapes shrink and are removed eventually
   object.scale(.95); 
   if (object.area < 1){
-    object.remove(); // remove the circle from the canvas
-    // shapes.splice(i, 1); // remove the circle from the array
+    object.remove(); 
   }
 }
 }
@@ -242,20 +251,17 @@ else if (animation == "scramble"){
   var destination = Point.random() * view.size;
   var vector = destination - object.position;
   object.position += vector/30;
-  //all shapes shrink and are removed eventually
   object.scale(.95); 
   if (object.area < 1){
-    object.remove(); // remove the circle from the canvas
+    object.remove(); 
     }
   }
 }
   else{
     object.onFrame = function(event){
-    //all shapes shrink and are removed eventually
     object.scale(.95); 
     if (object.area < 1){
-      object.remove(); // remove the circle from the canvas
-      // shapes.splice(i, 1); // remove the circle from the array
+      object.remove(); 
       }
     }
   }
