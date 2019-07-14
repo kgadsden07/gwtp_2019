@@ -1,6 +1,6 @@
 # gwtp_2019
 
-Project for kids to create their own, individualized Patatap. 
+Project for kids to create their own landing page and Patatap while learning HTML, CSS, and JS.  
 
 ## Dependencies
 
