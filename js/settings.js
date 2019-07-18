@@ -56,6 +56,7 @@ function onKeyDown(event){
 
   if (codeOn){  
   if (parsedCode.indexOf(event.key) >= 0 && choice == 'pata'){
+    $("#instrMessage").css("display", "none");
     codeMap[event.key] = true
     var proceed = true;
     var values = Object.values(codeMap);
@@ -112,6 +113,7 @@ function onKeyDown(event){
     }
 
   if (keyData[event.key] && notCode){
+    $("#instrMessage").css("display", "none");
     keyData[event.key].sound.play();
     var maxPoint = new Point(view.size.width, view.size.height);
     for (var x = 0; x < keyData[event.key].number; ++x){

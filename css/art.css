@@ -54,3 +54,18 @@ body, html{
 span.glyphicon:hover{
     color: white;
 }
+
+.instruction-message{
+    position: relative; 
+    z-index: 1; 
+    font-size: 16px; 
+    background-color: rgba(90, 88, 88, .4); 
+    padding: 10px; 
+    color: white;
+}
+
+
+#instrMessage{
+    transition-timing-function: ease-in;
+    transition: .5s;
+}
